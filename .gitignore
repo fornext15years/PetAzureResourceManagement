@@ -3,3 +3,7 @@
 ################################################################################
 
 /PetConsoleAzureResources/obj
+/PetConsoleAzureResources/bin/Debug/netcoreapp2.2
+/PetConsoleAzureResources/.vscode
+/PetConsoleAzureResources/.vs/PetConsoleAzureResources/v15
+/.vscode
