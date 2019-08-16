@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Azure.Management.ResourceManager.Fluent;
+using System;
 
 namespace PetConsoleAzureResources
 {
@@ -6,21 +7,46 @@ namespace PetConsoleAzureResources
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Creating resource group!");
-
+            ILogger logger = new ConsoleLogger();
             ResourceCreator creator = new ResourceCreator();
-            var succeed = creator.CreateResourceGroup("testrg16082019","testadgroup");
 
-            if (succeed)
+            var resgrpName = PromptAcknowledge("Please enter resource group name");
+
+            var azure = ServicePrincipal.CreateInstance().CreateServicePrincipal();
+            if (azure != null)
             {
-                Console.WriteLine("Created successfully!");
+                logger.WriteLog(AzureActionMessages.AzureActionCreateServicePrincipalOk);
+
+                var actionResult = creator.CreateResourceGroup(azure, resgrpName, "testadgroup");
+                logger.WriteLog(actionResult.Message);
+
+                if (actionResult.Succeed)
+                {
+                    var resgrp = actionResult.Value as IResourceGroup;
+
+                    var webappName = PromptAcknowledge("Please enter web app name");
+                    actionResult = creator.CreateWebApp(azure, resgrp, "demoapp16082019");
+                    logger.WriteLog(actionResult.Message);
+                }
             }
             else
             {
-                Console.WriteLine("Failed");
+                logger.WriteLog(AzureActionMessages.AzureActionCreateServicePrincipalFail);
             }
 
+            Console.WriteLine("Done. please enter key to finish.");
             Console.ReadKey();
         }
+
+        private static string PromptAcknowledge(string msg)
+        {
+            Console.WriteLine(msg);
+
+            var userInput = Console.ReadLine();
+            Console.WriteLine($"Processing..");
+            return userInput;
+        }
+
+        
     }
 }

@@ -1,4 +1,5 @@
 
+using Microsoft.Azure.Management.AppService.Fluent;
 using Microsoft.Azure.Management.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Authentication;
@@ -10,28 +11,59 @@ namespace PetConsoleAzureResources
 {
     public class ResourceCreator
     {
-        public bool CreateResourceGroup(string rg, string adgroup)
+        public AzureActionResult CreateResourceGroup(IAzure azure, string rg, string adgroup)
         {
+            AzureActionResult result = new AzureActionResult();
             try
-            {
-                ServicePrincipalLoginInformation loginInfo = new ServicePrincipalLoginInformation()
+            {                
+                IResourceGroup resGrp = null;
+
+                if (!azure.ResourceGroups.Contain(rg))
                 {
-                    ClientId = Environment.GetEnvironmentVariable("ClientId", EnvironmentVariableTarget.Machine),
-                    ClientSecret = Environment.GetEnvironmentVariable("ClientSecret", EnvironmentVariableTarget.Machine)
-                };
+                    resGrp = azure.ResourceGroups.Define(rg).WithRegion(Region.USEast).Create();
+                    result.Message = $"{resGrp.Name} in {resGrp.RegionName} has been Created successfully!";
+                }
+                else
+                {
+                    resGrp = azure.ResourceGroups.GetByName(rg);
+                    result.Message = $"{resGrp.Name} in {resGrp.RegionName} already exists";
+                }
 
-                var credentials = new AzureCredentials(loginInfo, Environment.GetEnvironmentVariable("TenantId", EnvironmentVariableTarget.Machine), AzureEnvironment.AzureGlobalCloud);
-                var azureAuth = Azure.Configure().WithLogLevel(HttpLoggingDelegatingHandler.Level.Basic).Authenticate(credentials);
-                var azure = azureAuth.WithSubscription(Environment.GetEnvironmentVariable("SubscriptionId", EnvironmentVariableTarget.Machine));
-                var resourceGroup = azure.ResourceGroups.Define(rg).WithRegion(Region.USEast).Create();
-
-                return true;
+                result.Succeed = true;
+                result.Value = resGrp;
+                return result;
             }
             catch (Exception ex)
             {
+                result.Succeed = false;
+                result.Value = null;
+                result.Message = $"Failed to create {rg} because of {ex.Message}";
             }
 
-            return false;
+            return result;
+        }
+
+        public AzureActionResult CreateWebApp(IAzure azure, IResourceGroup resGrp, string webappName)
+        {
+            AzureActionResult result = new AzureActionResult();
+
+            try
+            {
+                var webapp = azure.WebApps.Define(webappName).WithRegion(Region.USEast).WithExistingResourceGroup(resGrp).WithNewWindowsPlan(PricingTier.StandardS1).Create();
+                result.Message = $"{webapp.Name} in {webapp.RegionName} has been Created successfully!";
+                result.Succeed = true;
+                result.Value = webapp;
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                result.Succeed = false;
+                result.Value = null;
+                result.Message = $"Failed to create {webappName} because of {ex.Message}";
+            }
+
+            return result;
         }
     }
 }
