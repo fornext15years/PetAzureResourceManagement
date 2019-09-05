@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetConsoleAzureResources", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetConsoleAzureBatch", "..\PetConsoleAzureBatch\PetConsoleAzureBatch.csproj", "{37D5E0EB-AD51-4E81-850D-8FCD2A822D7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetConsoleBlobClient", "..\PetConsoleBlobClient\PetConsoleBlobClient.csproj", "{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{37D5E0EB-AD51-4E81-850D-8FCD2A822D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37D5E0EB-AD51-4E81-850D-8FCD2A822D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37D5E0EB-AD51-4E81-850D-8FCD2A822D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

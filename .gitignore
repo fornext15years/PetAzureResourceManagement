@@ -10,3 +10,6 @@
 /PetConsoleAzureBatch/bin/Debug/netcoreapp2.2
 /PetConsoleAzureBatch/obj/Debug/netcoreapp2.2
 /PetConsoleAzureBatch/obj
+/PetConsoleBlobClient/bin/Debug/netcoreapp2.2
+/PetConsoleBlobClient/obj/Debug/netcoreapp2.2
+/PetConsoleBlobClient/obj
