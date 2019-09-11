@@ -10,3 +10,5 @@
 /PetConsoleAzureBatch/bin/Debug/netcoreapp2.2
 /PetConsoleAzureBatch/obj/Debug/netcoreapp2.2
 /PetConsoleAzureBatch/obj
+/PetCosmosTable/obj
+/PetCosmosTable/bin/Debug/netcoreapp2.2
