@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetConsoleAzureBatch", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetCosmosTable", "..\PetCosmosTable\PetCosmosTable.csproj", "{F974C367-B1C1-4DCC-AD7D-5CE45A67DBF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetConsoleBlobClient", "..\PetConsoleBlobClient\PetConsoleBlobClient.csproj", "{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetConsoleBlobClient", "..\PetConsoleBlobClient\PetConsoleBlobClient.csproj", "{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetSearch", "..\PetSearch\PetSearch.csproj", "{23018C30-5881-4A29-810C-556A72227FC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +27,18 @@ Global
 		{37D5E0EB-AD51-4E81-850D-8FCD2A822D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37D5E0EB-AD51-4E81-850D-8FCD2A822D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37D5E0EB-AD51-4E81-850D-8FCD2A822D7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F974C367-B1C1-4DCC-AD7D-5CE45A67DBF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F974C367-B1C1-4DCC-AD7D-5CE45A67DBF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F974C367-B1C1-4DCC-AD7D-5CE45A67DBF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F974C367-B1C1-4DCC-AD7D-5CE45A67DBF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6596DC4A-1F2B-4F69-A1A6-D35FE3DA53CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23018C30-5881-4A29-810C-556A72227FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23018C30-5881-4A29-810C-556A72227FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23018C30-5881-4A29-810C-556A72227FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23018C30-5881-4A29-810C-556A72227FC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

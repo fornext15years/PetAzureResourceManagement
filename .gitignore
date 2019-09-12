@@ -15,3 +15,5 @@
 /PetConsoleBlobClient/obj
 /PetCosmosTable/obj
 /PetCosmosTable/bin/Debug/netcoreapp2.2
+/PetSearch/obj
+/PetSearch/bin/Debug/netcoreapp2.2
