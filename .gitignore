@@ -17,3 +17,11 @@
 /PetCosmosTable/bin/Debug/netcoreapp2.2
 /PetSearch/obj
 /PetSearch/bin/Debug/netcoreapp2.2
+/PetConsoleAzureResources/PetEventHubReceiver/obj
+/PetConsoleAzureResources/.vs/PetConsoleAzureResources/DesignTimeBuild
+/PetEventHubSender/obj
+/PetNotificationHub/bin/x64/Debug/AppX
+/PetNotificationHub/bin/x86/Debug/Core
+/PetNotificationHub/bin/x86/Debug
+/PetNotificationHub/obj
+/PetRedisCache/obj
